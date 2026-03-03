@@ -9,4 +9,4 @@ if __name__ == "__main__":
            timeout=1.00,
            dsrdtr=True)
     
-    p.text("Hello World\n")
+    p.image("test_image.jpg")
