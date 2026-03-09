@@ -1,12 +1,4 @@
-from escpos.printer import Serial
+from printer import Printer
 
-if __name__ == "__main__":
-    p = Serial(devfile='/dev/serial0',
-           baudrate=9600,
-           bytesize=8,
-           parity='N',
-           stopbits=1,
-           timeout=1.00,
-           dsrdtr=True)
-    
-    p.image("test_image.jpg")
+printer = Printer()
+printer.print_image("test1.png")
