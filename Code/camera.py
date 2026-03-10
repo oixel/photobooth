@@ -3,7 +3,6 @@ import time
 import os
 # from playsound3 import playsound
 
-
 def timer(second_limit,photo_iteration):
 # i can add it to show which specific photo its taking and to increase the pause time of the photo but let me know if you want that!
     for i in range(second_limit, 0, -1):
