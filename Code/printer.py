@@ -1,4 +1,3 @@
-
 from config import MAX_IMAGE_WIDTH, CHUNK_ROWS, PRINT_DATA_DELAY
 from PIL import Image
 from escpos.printer import Usb, File
