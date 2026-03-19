@@ -7,12 +7,11 @@ import time
 
 class Printer:
     def __init__(self):
-        self.printer = Usb(0x0FE6, 0x811E, profile="POS-5890")  # Connect to printer via USB port and initialize as generic thermal printer (matches baudrate)
+        # Connect to generic USB printer
+        self.printer = Usb(0x28e9, 0x0289, profile='POS-5890', out_ep=0x03, in_ep=0x81)
 
-    # Prints the image at the given path
-    def print_image(self, image_path):
-        image = Image.open(image_path)
-
+    # Prints the image (Pillow.Image) passed in
+    def print_image(self, image):
         ratio = MAX_IMAGE_WIDTH / image.width
         image = image.resize((MAX_IMAGE_WIDTH, int(image.height * ratio)), Image.LANCZOS)  # Resize image to max width using LANCZOS algorithm
         
